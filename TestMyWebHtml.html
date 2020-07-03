@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smart DSS Web Client Demo</title>
+<style>
+	/*按钮*/
+	.btn{
+		font-size:20px; 
+		border: 2px solid #a0d0ef;
+		background: linear-gradient(#4695cc, #1b446a);
+	}
+	.btn:hover{
+		background: #1E5FC6;
+	}
+
+	/*输入框*/
+	.txt{
+		font-size:20px;
+	}
+	.txt:focus{
+		background:#9CD0C6;
+	}
+
+	/*文本*/
+	.label{
+		color:#FF8000;
+		font-size:20px;
+	}
+	
+</style>
+<script src="vue.js"></script>
+</head>
+<body style = "background-color:#071B17;">
+<!--布局标题栏-->
+<h1 style = "text-align:center;color:#FF8000;">Smart DSS Web Client Demo</h1>
+
+<!--布局操作栏-->
+<b  id = clicker style = "color:#FF8000;font-size:20px;"></b>
+<b class = "label">Ip:</b><input id = textIp type="text" class="txt">
+<b class = "label">用户名:</b><input id = usename type="text" class="txt">
+<b class = "label">密码:</b><input id =textPwd type="password" class="txt">
+<b class = "label">端口:</b><input id = textport name="textPort" class="txt">
+<button onclick = "OnInit()" class="btn">初始化</button>
+<button onclick = "OnLogin()"  class="btn">登陆</button>
+
+<script>
+	var clickerNum = 1;
+	//初始化
+	function OnInit()
+	{
+		document.getElementById("clicker").innerHTML = clickerNum++;
+	}
+	//登陆
+	function OnLogin()
+	{
+		var textIp = document.getElementById("textIp").value;
+		document.getElementById("clicker").innerHTML = textIp;
+	}	
+</script>
+
+<!--布局底栏-->
+<div id="footer" style="background-color:#FFA500;text-align:center; position:fixed;left:0px;bottom:0px;width: 100%;height: 50px; z-index: 9999;">版权 © dahuatech.com</div>
+
+</body>
+</html>
